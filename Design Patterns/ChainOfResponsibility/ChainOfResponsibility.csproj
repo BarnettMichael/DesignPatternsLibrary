@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C8B358A4-7AAF-4C41-8EF5-DE897F617F0D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ChainOfResponsibility</RootNamespace>
+    <AssemblyName>ChainOfResponsibility</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Approval\Utility\ConsoleInput.cs" />
+    <Compile Include="Approval\Employee.cs" />
+    <Compile Include="Approval\EndOfChainExpenseHandler.cs" />
+    <Compile Include="Approval\ExpenseHandler.cs" />
+    <Compile Include="Approval\ExpenseReport.cs" />
+    <Compile Include="Approval\Interfaces\Interfaces.cs" />
+    <Compile Include="Poker\Card.cs" />
+    <Compile Include="Poker\Categorizers\FlushCatagorizer.cs" />
+    <Compile Include="Poker\Categorizers\FourOfAKindCatagorizer.cs" />
+    <Compile Include="Poker\Categorizers\FullHouseCatagorizer.cs" />
+    <Compile Include="Poker\Categorizers\HandCatagorizer.cs" />
+    <Compile Include="Poker\Categorizers\HighCardCatagorizer.cs" />
+    <Compile Include="Poker\Categorizers\PairCatagorizer.cs" />
+    <Compile Include="Poker\Categorizers\RoyalFlushCatagorizer.cs" />
+    <Compile Include="Poker\Categorizers\StraightCatagorizer.cs" />
+    <Compile Include="Poker\Categorizers\StraightFlushCatagorizer.cs" />
+    <Compile Include="Poker\Categorizers\ThreeOfAKindCatagorizer.cs" />
+    <Compile Include="Poker\Categorizers\TwoPairCatagorizer.cs" />
+    <Compile Include="Poker\Enums\HandRanking.cs" />
+    <Compile Include="Poker\Enums\Suit.cs" />
+    <Compile Include="Poker\Enums\Value.cs" />
+    <Compile Include="Poker\Hand.cs" />
+    <Compile Include="Poker\HandCategorizerChain.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
